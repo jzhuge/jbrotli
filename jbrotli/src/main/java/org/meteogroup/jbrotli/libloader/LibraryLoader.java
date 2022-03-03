@@ -110,6 +110,7 @@ class LibraryLoader {
     if (X86_AMD64.matches(osArch)) return X86_AMD64.name;
     if (X86.matches(osArch)) return X86.name;
     if (ARM32_VFP_HFLT.matches(osArch)) return ARM32_VFP_HFLT.name;
+    if (AARCH64.matches(osArch)) return AARCH64.name;
     return osArch;
   }
 

@@ -19,7 +19,8 @@ package org.meteogroup.jbrotli.libloader;
 enum ARCH {
   ARM32_VFP_HFLT("arm32-vfp-hflt", "arm"),
   X86("x86", "i386", "i486", "i586", "i686", "pentium"),
-  X86_AMD64("x86-amd64", "x86_64", "amd64", "em64t", "universal");
+  X86_AMD64("x86-amd64", "x86_64", "amd64", "em64t", "universal"),
+  AARCH64("aarch64", "aarch64");
 
   final String name;
   final String[] aliases;

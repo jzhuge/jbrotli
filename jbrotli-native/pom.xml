@@ -47,10 +47,24 @@
       <activation>
         <os>
           <family>mac</family>
+          <arch>x86_64</arch>
         </os>
       </activation>
       <modules>
         <module>darwin-x86-amd64</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>darwin-aarch64</id>
+      <activation>
+        <os>
+          <family>mac</family>
+          <arch>aarch64</arch>
+        </os>
+      </activation>
+      <modules>
+        <module>darwin-aarch64</module>
       </modules>
     </profile>
 

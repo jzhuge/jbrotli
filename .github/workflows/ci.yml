@@ -1,0 +1,29 @@
+# Workflow for building and running tests
+
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, reopened, labeled, synchronize ]
+jobs:
+  build_and_test:
+    name: Build and test ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-18.04, macos-latest ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+      - name: Build / Test with Maven
+        run: |
+          mvn --version
+          mvn --batch-mode --update-snapshots verify
